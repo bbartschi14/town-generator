@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0923c0a47e119b428957858fd630387, type: 3}
+  m_Name: BasicLWings
+  m_EditorClassIdentifier: 
+  buildingSize: {x: 2, y: 3}
+  buildingHeight: 1
+  randomHeightRange: 3
+  randomSizeRange: 4
+  wingsStrategy: {fileID: 11400000, guid: e4f5ad4497f63f44fb54328f578b13a6, type: 2}
+  wingStrategy: {fileID: 0}
+  storiesStrategy: {fileID: 11400000, guid: 7143d6c5c15e7e247936d85c06c73130, type: 2}
+  storyStrategy: {fileID: 0}
+  wallsStrategy: {fileID: 11400000, guid: 9baa0d704f0da274b8afae138952b07c, type: 2}
+  roofStrategy: {fileID: 11400000, guid: 0402dacc63126e64abccbe03d0ea88d3, type: 2}
+  randomHeight: 1
+  randomSize: 1
