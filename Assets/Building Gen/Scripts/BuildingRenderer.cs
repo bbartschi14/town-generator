@@ -7,6 +7,9 @@ public class BuildingRenderer : MonoBehaviour
 {
     public Transform floorPrefab;
     public Transform patioPrefab;
+    public Transform fencePrefab;
+    public Transform flowerBoxPrefab;
+
     public Transform[] wallPrefab;
     public Transform[] roofPrefab;
     Transform bldgFolder;
@@ -26,9 +29,48 @@ public class BuildingRenderer : MonoBehaviour
         {
             RenderWing(wing);
         }
-        
+        RenderFences(bldg);
         bldgFolder.transform.Translate(new Vector3((float)bldg.Size.x / 2 * 3, 0f, (float)bldg.Size.y / 2 * 3));
 
+    }
+    private void RenderFences(Building bldg)
+    {
+        for (int x = -1; x < bldg.Size.x+2; x++)
+        {
+            for (int y = -1; y < bldg.Size.y+2; y++)
+            {
+                if (x == -1 || y == -1 || x == bldg.Size.x+1 || y == bldg.Size.y+1)
+                {
+                    Vector3 point = new Vector3(x * -3f, 0f, y * -3f);
+                    Quaternion rot;
+                    if (x == -1 || x == bldg.Size.x + 1)
+                    {
+                        rot = Quaternion.identity;
+                    } else
+                    {
+                        rot = Quaternion.Euler(0, 90, 0);
+                        point += new Vector3(1f, 0f, 0f);
+
+                    }
+                    if (x == bldg.Size.x + 1 && y == bldg.Size.y + 1) continue;
+                    if (x == -1 && y == bldg.Size.y + 1) continue;
+                    Transform prefab;
+                    if (UnityEngine.Random.Range(0f, 1f) > .3f)
+                    {
+                        prefab = fencePrefab;
+                    } else
+                    {
+                        prefab = flowerBoxPrefab;
+                    }
+                    Transform f = Instantiate(prefab, bldgFolder.TransformPoint(point), rot);
+                    f.SetParent(bldgFolder);
+
+
+
+                }
+                
+            }
+        }
     }
 
     private void RenderWing(Wing wing)
@@ -95,6 +137,13 @@ public class BuildingRenderer : MonoBehaviour
 
     private void PlaceSouthWall(int x, int y, int level, Transform storyFolder, int wall)
     {
+        if (wall == 0)
+        {
+            if (UnityEngine.Random.Range(0f, 1f) > .5f)
+            {
+                wall = 3;
+            }
+        }
         Transform w = Instantiate(
             wallPrefab[wall],
             storyFolder.TransformPoint(
@@ -124,6 +173,13 @@ public class BuildingRenderer : MonoBehaviour
 
     private void PlaceEastWall(int x, int y, int level, Transform storyFolder, int wall)
     {
+        if (wall == 0)
+        {
+            if (UnityEngine.Random.Range(0f, 1f) > .5f)
+            {
+                wall = 3;
+            }
+        }
         Transform w = Instantiate(
             wallPrefab[wall],
             storyFolder.TransformPoint(
@@ -152,6 +208,13 @@ public class BuildingRenderer : MonoBehaviour
 
     private void PlaceNorthWall(int x, int y, int level, Transform storyFolder, int wall)
     {
+        if (wall == 0)
+        {
+            if (UnityEngine.Random.Range(0f, 1f) > .5f)
+            {
+                wall = 3;
+            }
+        }
         Transform w = Instantiate(wallPrefab[wall], storyFolder.TransformPoint( new Vector3(x * -3f, 0.3f + level * 2.5f, y * -3f - 3f ) ),
             Quaternion.Euler(0, 90, 0));
         w.SetParent(storyFolder);
@@ -166,6 +229,13 @@ public class BuildingRenderer : MonoBehaviour
 
     private void PlaceWestWall(int x, int y, int level, Transform storyFolder, int wall)
     {
+        if (wall == 0)
+        {
+            if (UnityEngine.Random.Range(0f, 1f) > .5f)
+            {
+                wall = 3;
+            }
+        }
         Transform w = Instantiate(
             wallPrefab[wall],
             storyFolder.TransformPoint(

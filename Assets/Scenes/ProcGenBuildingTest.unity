@@ -155,10 +155,15 @@ MonoBehaviour:
   floorPrefab: {fileID: 400002, guid: 586c4c43d2727bd45a7ef177530c10f8, type: 3}
   patioPrefab: {fileID: -4216859302048453862, guid: 723e845b3e35cc04a95e3e1818e6f5da,
     type: 3}
+  fencePrefab: {fileID: -4216859302048453862, guid: 213ac54ba73d9ea40881eb1ccc5d86e2,
+    type: 3}
+  flowerBoxPrefab: {fileID: -4216859302048453862, guid: b97de4154f19a7e468d90b342bdf89df,
+    type: 3}
   wallPrefab:
   - {fileID: 400002, guid: 5bd7549d4ba97824eb10d08267faab67, type: 3}
-  - {fileID: 400002, guid: 60fe073f04fa8a341ac208dad7a1eba8, type: 3}
+  - {fileID: -4216859302048453862, guid: ebdf78f336eb3a34d9e923fbaa60d696, type: 3}
   - {fileID: -4216859302048453862, guid: 58e35686a8106a944852595914104121, type: 3}
+  - {fileID: -4216859302048453862, guid: 7db937c40147f424eb9c8e216f437a08, type: 3}
   roofPrefab:
   - {fileID: 400002, guid: 3ac29a2820fd760489c1f74381389614, type: 3}
   - {fileID: 400002, guid: 8a9c3ce2f8d1f1243b1d24a30042b9b3, type: 3}
